@@ -1,0 +1,55 @@
+# Trajectory and large binary files
+*.xtc
+*.trr
+*.tng
+*.edr
+*.tpr
+*.cpt
+*.trj
+
+# GROMACS output
+*.log
+mdout.mdp
+\#*
+*.bak
+
+# Large structure files (keep .pdb for representative structures, ignore full systems)
+*_sol.gro
+*_ion.gro
+em.gro
+nvt.gro
+npt.gro
+prod*.gro
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+*.egg-info/
+dist/
+build/
+
+# System / editor
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Large data files
+*.nc
+*.h5
+*.hdf5
+*.npy
+*.npz
+
+# Serialized MSM objects (can be re-generated from scripts)
+*.npy
+*.pkl
+msm_*.pkl
+
+# Logs
+*.out
+slurm-*.out

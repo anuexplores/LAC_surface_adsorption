@@ -1,0 +1,47 @@
+title                   = Laccase dense-APTES adsorption 100 ns NPT
+integrator              = md
+nsteps                  = 100000000
+dt                      = 0.002
+
+nstxout                 = 50000
+nstvout                 = 50000
+nstfout                 = 50000
+nstenergy               = 50000
+nstlog                  = 50000
+nstxout-compressed      = 50000
+compressed-x-grps       = System
+
+continuation            = no
+constraint_algorithm    = lincs
+constraints             = h-bonds
+lincs_iter              = 1
+lincs_order             = 4
+
+cutoff-scheme           = Verlet
+ns_type                 = grid
+nstlist                 = 10
+rcoulomb                = 1.0
+rvdw                    = 1.0
+coulombtype             = PME
+pme_order               = 4
+fourierspacing          = 0.16
+
+define                  = -DPOSRES_SUR
+refcoord-scaling        = com
+
+tcoupl                  = V-rescale
+tc-grps                 = Protein_HD1_HE1_HD2_HD3_CM1_HE2_CU1_SUR_APT  Water_Cl-
+tau_t                   = 0.1     0.1
+ref_t                   = 300     300
+
+pcoupl                  = C-rescale
+pcoupltype              = isotropic
+tau_p                   = 2.0
+ref_p                   = 1.0
+compressibility         = 4.5e-5
+
+pbc                     = xyz
+
+gen_vel                 = yes
+gen_temp                = 300
+gen_seed                = -1
